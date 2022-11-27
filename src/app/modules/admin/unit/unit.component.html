@@ -1,0 +1,90 @@
+
+    <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
+        <h2 class="font-medium leading-tight text-4xl mt-0 mb-2 text-blue-600">Unit</h2>
+        <form class="w-full" [formGroup] ="unitForm" (ngSubmit)="getValues()" >
+          <div class="form-group mb-6">
+            <label for="name"   class="form-label inline-block mb-2 text-gray-700">Name</label>
+    
+            <input type="text" formControlName="name" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="name"
+              placeholder="" name="name"  required>
+          </div>
+         
+          
+          <div class="form-group form-check text-center mb-6">
+            <input type="checkbox" formControlName="checkbox"
+              class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
+              id="exampleCheck87" checked>
+            <label class="form-check-label inline-block text-gray-800" for="exampleCheck87">IsActive</label>
+          </div>
+          <button type="submit" class="
+            m-5
+            max-w-full
+            px-6
+            py-2.5
+            bg-blue-600
+            text-white
+            font-medium
+            text-xs
+            leading-tight
+            uppercase
+            rounded
+            shadow-md
+            hover:bg-blue-700 hover:shadow-lg
+            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+            active:bg-blue-800 active:shadow-lg
+            transition
+            duration-150
+            ease-in-out">Submit</button>
+        </form>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+              <table class="min-w-full">
+                <thead class="border-b">
+                  <tr>
+                    
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                      Name
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                      IsActive
+                    </th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b" *ngFor = "let detail of UserList" >
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      {{detail.name}}
+                    </td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                     {{detail.checkbox}}
+                    </td>
+                    
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+        
+    
