@@ -16,20 +16,29 @@ export class ListComponent implements OnInit{
     }
     
 }
-onDelete(item:any)
+onDelete(item)
 {
+  // if(index)
+  // {
+  //   console.log(index);
+  //   this.UserDetails.splice(index,1);
+
+  // }
+
   const localData = localStorage.getItem("UserDetails");
   if(localData!=null){
     const UserArray= JSON.parse(localData);
     for(let index=0;index<UserArray.length;index++)
     if(UserArray[index].Id==item.Id)
     {
-      UserArray.splice(0,1);
+     this.UserDetails.splice(index,1);
     }
   }
-
-  localStorage.setItem('UserDetails',JSON.stringify(this.UserDetails))
-
-}
+  localStorage.setItem('UserDetails',JSON.stringify(this.UserDetails));
 
 }
+}
+
+
+// }
+
