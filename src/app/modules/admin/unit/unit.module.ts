@@ -4,6 +4,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import { UnitComponent } from 'app/modules/admin/unit/unit.component';
 import { ListComponent } from 'app/modules/admin/unit/list/list.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 const unitRoutes: Route[] = [
     {
         path     : '',
@@ -24,7 +27,8 @@ const unitRoutes: Route[] = [
     imports     : [
         RouterModule.forChild(unitRoutes),
         ReactiveFormsModule,
-        CommonModule
+        CommonModule,
+        MatFormFieldModule,MatIconModule,MatInputModule,
     ]
 })
 export class UnitModule
